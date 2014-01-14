@@ -1,0 +1,8 @@
+grader2.py 
+    should be moved to the appropriate subdirectory containing the submitted zip files
+tests.py 
+    can be left at the top, or moved into the subdirectory
+    if a copy is moved into the subdirectory, it will be loaded rather than the top-level one
+input.txt
+    is necessary in top directory
+    used in case a submitted script requests input

@@ -1,0 +1,51 @@
+-----
+0.1 
+----- 
+* codons grouped by nucleic acid
+* only relevant codons included ([CTAG]{3}])
+* only sequences beginning with ATG and ending with TAA|TAG|TGA counted
+* gene count added to output
+-----
+0.2
+-----
+* check for start codons other than ATG (GTG|CTG|TTG|ATT)
+	distinguish between when these codons are used as start and internally
+* output ordered in "genetic code dictionary" order
+-----
+0.3
+-----
+* ignore tRNA sections
+	not done for total script, not necessary for gbg script
+* check for TGA that is a protein encoding internal codon
+	done for gbg script, not total script
+-----
+0.4
+-----
+* count codons to produce codon frequency as a percentage
+* added -c flag for count instead of frequency
+* added -s flag to format output for input into spreadsheet	
+-----
+0.5
+-----
+* added -d flag for debugging output
+* added -b flag for bias output
+-----
+0.6
+-----
+* third position base composition for four codon families only
+-----
+0.7
+-----
+* now bias output computes 3rd pos GATC bias for four codon families 
+	(including 4 codon groups of 6 codon families) 
+	3rd pos GA bias for 2 codon families ending in G or A
+	3rd pos TC bias for 2 codon families ending in T or C
+	(both include 2 codon groups of 6 codon families)
+-----
+0.8
+-----
+* now 3rd pos GATC bias for 4 codon families is computed per gene
+-----
+0.9
+-----
+* cleanup, changed variable names to make script more readable

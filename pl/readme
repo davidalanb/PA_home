@@ -1,0 +1,51 @@
+NAME
+	gbg-codon-usage -- gene by gene codon usage 
+
+SYNOPSIS
+	gbg-codon-usage [-s] [-c] [-d] [-b] geneFile.fna
+
+DESCRIPTION
+	gbg-codon-usage extracts codon usage information from nucleic acid 
+	input files in Fasta format.  While it's intended to be used for files 
+	where each sequence is a gene, it will work for any valid file and is,
+	in fact, a sequence by sequence codon usage analyzer.
+
+	By default, output goes to <output-geneFile.txt> and is in the form of
+	a chart with gene id's on the y-axis and codons (grouped by nucleic 
+	acid) on the x-axis, containing the frequency of x codon in y gene:
+	
+		(number of appearances of codon) / (total codons in gene)
+
+	With the [-b] option specified, bias information is output to 
+	<bias-geneFile.csv> in two charts.  The first has gene id's on the 
+	y-axis and G,A,T,C on the x-axis, containing the frequency of x 
+	nucleotide in the third position of codons in 4 codon amino acid 
+	families:
+		
+		(# of times nucleotide appears in 3rd position of 4 codon 
+		families) / (total number of codons in 4 codon families)
+
+	The second chart contains the frequency aggregated over all genes, 
+	and additionally G,A frequency in 2 codon families ending in G or A, 
+	and T,C frequency in 2 codon families ending in T or C.
+
+	Note: 6 codon amino acid families are separated into 4 group and 2 
+	group, and represented in the appropriate chart. 
+
+	The options are as follows:
+
+	-s	output tsv (tab separated values) for spreadsheets to 
+		<output-geneFile.csv>
+
+	-c	output codon counts instead of frequency
+
+	-d	output more codon info to <debug-geneFile.txt>
+		(should only be run on very small input files)
+ 
+	-b 	output bias information to <bias-geneFile.csv>
+
+SEE ALSO
+	separate-chromosomes.pl, separate-strands.pl, get-ref-set.pl
+
+AUTHOR
+	David Benedetto	<dab7@unh.edu>
